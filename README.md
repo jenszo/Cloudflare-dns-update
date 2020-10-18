@@ -3,7 +3,7 @@ Allows me to update my Cloudflare DNS record so that I can have access to my ser
 
 Since I have a dynamic IP at home, but have setup myself with a little web server I needed a way to have nice domain to access it and not worry about the IP changes. 
 There are many great options out there such as ddns or noip, but why pay for something or go trough the trouble of confirming your account should you choose the free 
-version when you can try and learn something new and create your own script that would mimic the actions of those clients :)
+version when you can create your own script that would mimic the actions of those clients.
 
 Also the good thing about this is that you can use it for any of your domains / sub domains hosted trough Cloudflare and not having to pick one of those free domains. 
 
@@ -22,7 +22,7 @@ CF_API_TOKEN=<your api token>
 
 See `Dockerfile` for hints on how to fill in these values.
 
-If you dont want to have docker unn
+If you dont want to deploy on docker, the script may be run standalone but requires `curl`, `bind-tools` and `jq` 
 
 ***Requirements:***
 - Basic knowledge of shell scripting, Docker
