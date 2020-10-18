@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    cf-dns-updater:
+      image: jenszo/cloudflare-dns-updater:1.0.0
+      build: .
+      environment: # See Dockerfile for details
+        - CF_ZONE_ID=${CF_ZONE_ID}
+        - CF_DNS_RECORD_ID=${CF_DNS_RECORD_ID}
+        - CF_DNS_DOMAIN=${CF_DNS_DOMAIN}
+        - CF_API_TOKEN=${CF_API_TOKEN}
+        - CF_REFRESH_CYLCE=60
+      restart: unless-stopped
+      tty: true
