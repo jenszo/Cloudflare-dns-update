@@ -4,7 +4,7 @@ _cf_zone_id=${CF_ZONE_ID?ERROR:Missing zone_id}
 _cf_dns_record_id=${CF_DNS_RECORD_ID?ERROR:Missing record_id}
 _cfg_dns_domain=${CF_DNS_DOMAIN?ERROR:Missing domain name}
 _cf_api_token=${CF_API_TOKEN?ERROR:Missing Cloudflare API TOKEN}
-_cf_refresh_cylce=${CF_REFRESH_CYLCE:-5}
+_cf_refresh_cylce=${CF_REFRESH_CYLCE:-60}
 _actual_ip=""
 
 while true; do
