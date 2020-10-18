@@ -14,13 +14,22 @@ Besides their specific libraries, of course, the most painful dependency is syst
 In my case, I run it on my QNAP NAS in Container station. This saves me the trouble of ssh-ing into the box, placing the script somwehre and to modify the crontab.
 This way its maintainable and in plain sight.
 
-To set up, create an environment file `.env` alongside `docker-compose.yml`
+***Configuration***
+
+To set up, create an environment file `.env` alongside `docker-compose.yml`. See `Dockerfile` for hints on how to fill in these values.
+``
 CF_ZONE_ID=<your zone id>
 CF_DNS_RECORD_ID=<dns record id>
 CF_DNS_DOMAIN=<dns domain name>
 CF_API_TOKEN=<your api token>
+``
+***Building***
 
-See `Dockerfile` for hints on how to fill in these values.
+`docker-compose build`
+
+***Running***
+
+`docker-compose up`
 
 If you dont want to deploy on docker, the script may be run standalone but requires `curl`, `bind-tools` and `jq` 
 
