@@ -14,7 +14,7 @@ while true; do
   echo -n "Update $_cfg_dns_domain to $_current_ip: "
   [[ "$_actual_ip" != "$_current_ip" ]] && {
 
-    _response=$(curl -s -X PUT https://api.cloudflare.com/client/v4/zones/${_cf_zone_id}/dns_records/${_cf_dns_record_id} -H "Content-Type: application/json" -H "Authorization: Bearer ${_cf_api_token}" -H "cache-control: no-cache" -d "{\"type\" : \"A\", \"name\" : \"${_cfg_dns_domain}\", \"content\" : \"${_current_ip}\", \"proxied\" : \"true\" }")
+    _response=$(curl -s -X PUT https://api.cloudflare.com/client/v4/zones/${_cf_zone_id}/dns_records/${_cf_dns_record_id} -H "Content-Type: application/json" -H "Authorization: Bearer ${_cf_api_token}" -H "cache-control: no-cache" -d "{\"type\" : \"A\", \"name\" : \"${_cfg_dns_domain}\", \"content\" : \"${_current_ip}\", \"proxied\" : true }")
     _is_updated=$(echo ${_response} | jq --raw-output '.success' )
     _error_msg=$(echo ${_response} | jq --raw-output '.errors[].message')
 
